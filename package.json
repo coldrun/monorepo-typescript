@@ -1,0 +1,41 @@
+{
+  "name": "@modernweb/monorepo-typescript",
+  "private": true,
+  "version": "0.0.0",
+  "author": "ModernWeb <biuro@modernweb.pl>",
+  "type": "module",
+  "packageManager": "pnpm@8.13.1",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "format": "prettier . --write --ignore-unknown",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "just-pnpm": "^1.0.2",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
+      "eslint --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix"
+    ],
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
