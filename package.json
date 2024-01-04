@@ -1,7 +1,7 @@
 {
   "name": "@modernweb/monorepo-typescript",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "ModernWeb <biuro@modernweb.pl>",
   "type": "module",
   "packageManager": "pnpm@8.13.1",

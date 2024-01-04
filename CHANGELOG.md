@@ -1,3 +1,9 @@
+## [0.0.3](https://github.com/modernweb-pl/monorepo-typescript/compare/v0.0.2...v0.0.3) (2024-01-03)
+
+### Bug Fixes
+
+- **ci:** dockerfile location ([c8c4e82](https://github.com/modernweb-pl/monorepo-typescript/commit/c8c4e82e546311afacedcd9e80ad5e14a814025c))
+
 ## [0.0.2](https://github.com/modernweb-pl/monorepo-typescript/compare/v0.0.1...v0.0.2) (2024-01-03)
 
 ### Bug Fixes
