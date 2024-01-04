@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/website",
+  "name": "@monorepo-typescript/website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@monorepo/shared": "workspace:*"
+    "@monorepo-typescript/shared": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.0.8"

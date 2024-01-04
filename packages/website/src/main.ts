@@ -1,6 +1,6 @@
 import './style.css';
 import viteLogo from '/vite.svg';
-import { isCallable } from '@monorepo/shared';
+import { isCallable } from '@monorepo-typescript/shared';
 import { setupCounter } from './counter.ts';
 import typescriptLogo from './typescript.svg';
 
