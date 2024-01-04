@@ -10,7 +10,6 @@ import { fileURLToPath } from 'url';
 const { version: currentVersion } = createRequire(import.meta.url)('../package.json');
 
 const versionIncrements = ['patch', 'minor', 'major'];
-
 const tags = ['latest', 'next'];
 
 const dir = fileURLToPath(new URL('.', import.meta.url));
@@ -68,10 +67,6 @@ async function main() {
   step('Updating the package version...');
   updatePackage(targetVersion);
 
-  // Build the package.
-  step('Building the package...');
-  await run('pnpm', ['build']);
-
   // Generate the changelog.
   step('Generating the changelog...');
   await run('pnpm', ['changelog']);
@@ -93,14 +88,10 @@ async function main() {
   await run('git', ['commit', '-m', `release: v${targetVersion}`]);
   await run('git', ['tag', `v${targetVersion}`]);
 
-  // Publish the package.
-  // step('Publishing the package...');
-  // await run('pnpm', ['publish', '--tag', tags[tag], '--ignore-scripts', '--no-git-checks']);
-  //
-  // // Push to GitHub.
-  // step('Pushing to GitHub...');
-  // await run('git', ['push', 'origin', `refs/tags/v${targetVersion}`]);
-  // await run('git', ['push']);
+  // Push to GitHub.
+  step('Pushing to GitHub...');
+  await run('git', ['push', 'origin', `refs/tags/v${targetVersion}`]);
+  await run('git', ['push']);
 }
 
 function updatePackage(version) {
