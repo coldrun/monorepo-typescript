@@ -1,8 +1,8 @@
 import './style.css';
-import { isCallable } from '@monorepo/shared';
-import typescriptLogo from './typescript.svg';
 import viteLogo from '/vite.svg';
+import { isCallable } from '@monorepo/shared';
 import { setupCounter } from './counter.ts';
+import typescriptLogo from './typescript.svg';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
