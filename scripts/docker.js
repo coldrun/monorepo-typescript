@@ -11,8 +11,10 @@ const packagesDir = 'packages';
 const packagesPath = path.join(rootPath, packagesDir);
 
 const packages = fs.readdirSync(packagesPath);
-const pkg = createRequire(import.meta.url)('../package.json');
-const registry = pkg.docker.registry;
+const {
+  version,
+  docker: { registry },
+} = createRequire(import.meta.url)('../package.json');
 
 const args = minimist(process.argv.slice(2), { alias: { t: 'tag', v: 'verbose' } });
 const target = `${args._[0]}`;
@@ -25,14 +27,23 @@ async function main() {
   if (!packages.includes(target)) {
     throw new Error(`Invalid target: '${target}'`);
   }
-  const targetPackage = createRequire(import.meta.url)(`${packagesPath}/${target}/package.json`);
+  const targetPath = `${packagesPath}/${target}`;
+  const targetPackage = createRequire(import.meta.url)(`${targetPath}/package.json`);
   const name = targetPackage.name.replace('@', '');
   const packageName = `${registry}/${name}`;
-  const version = pkg.version;
   const currentImage = `${packageName}:v${version}`;
   const tagImage = `${packageName}:${tag}`;
 
-  const dockerArgs = ['build', '.', '--target', target, '-t', currentImage, '-t', tagImage];
+  const dockerArgs = [
+    'build',
+    '.',
+    '-f',
+    `${targetPath}/Dockerfile`,
+    '-t',
+    currentImage,
+    '-t',
+    tagImage,
+  ];
   if (args.verbose) {
     dockerArgs.push('--progress', 'plain');
   }
