@@ -1,3 +1,15 @@
+## [0.0.2](https://github.com/modernweb-pl/monorepo-typescript/compare/v0.0.1...v0.0.2) (2024-01-03)
+
+### Bug Fixes
+
+- **ci:** docker publish ([bcec0d8](https://github.com/modernweb-pl/monorepo-typescript/commit/bcec0d833e7dfbea3cf6d39424a69e9da2f3db8f))
+- **release:** remove build step ([b9060fc](https://github.com/modernweb-pl/monorepo-typescript/commit/b9060fc5bf43d00a3cbd312b9e00eff91e7cb7d0))
+
+### Features
+
+- **ci:** docker publish ([8dd57cf](https://github.com/modernweb-pl/monorepo-typescript/commit/8dd57cfc3a722d9b1dd0ebfff5bd47b0a6fcdf6e))
+- **package:** docker build ([1994f9b](https://github.com/modernweb-pl/monorepo-typescript/commit/1994f9b21548c41099f3daca5a09962d532e866a))
+
 ## 0.0.1 (2024-01-01)
 
 ### Features
