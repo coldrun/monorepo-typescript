@@ -9,6 +9,8 @@
     "node": ">=18"
   },
   "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "postinstall": "simple-git-hooks"
