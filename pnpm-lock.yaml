@@ -47,15 +47,22 @@ importers:
 
   packages/shared:
     devDependencies:
-      typescript:
-        specifier: ^5.2.2
-        version: 5.3.3
       vite:
         specifier: ^5.0.8
         version: 5.0.10(@types/node@20.10.6)
       vite-plugin-dts:
         specifier: ^3.7.0
         version: 3.7.0(@types/node@20.10.6)(typescript@5.3.3)(vite@5.0.10)
+
+  packages/website:
+    dependencies:
+      '@monorepo/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      vite:
+        specifier: ^5.0.8
+        version: 5.0.10(@types/node@20.10.6)
 
 packages:
 
