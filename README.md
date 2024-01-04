@@ -9,6 +9,7 @@ Opinionated [Monorepo](https://monorepo.tools/) for [TypeScript](https://www.typ
 - [ESLint](https://eslint.org/)
 - [lint-staged](https://github.com/lint-staged/lint-staged)
 - [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks)
+- [Docker](https://www.docker.com/)
 
 ## Packages tools
 

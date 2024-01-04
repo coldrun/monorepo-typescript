@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:docker": "node ../../scripts/docker.js website",
     "preview": "vite preview"
   },
   "dependencies": {
