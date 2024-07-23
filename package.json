@@ -4,9 +4,11 @@
   "version": "0.0.3",
   "author": "ModernWeb <biuro@modernweb.pl>",
   "type": "module",
-  "packageManager": "pnpm@8.13.1",
+  "packageManager": "pnpm@9.6.0",
+  "engineStrict": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=20",
+    "pnpm": ">=9.6"
   },
   "scripts": {
     "dev": "pnpm -r --parallel run dev",
