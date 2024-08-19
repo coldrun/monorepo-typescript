@@ -1,3 +1,16 @@
+## [0.0.4](https://github.com/coldrun/monorepo-typescript/compare/v0.0.3...v0.0.4) (2024-08-19)
+
+### Bug Fixes
+
+- **ci:** github pages base url ([4a6242f](https://github.com/coldrun/monorepo-typescript/commit/4a6242f0b047daeba02e62bf2e379810f1ecb29b))
+- **ci:** github pages base url ([938ac7e](https://github.com/coldrun/monorepo-typescript/commit/938ac7e04d5c022763b577b7e2524163e17a2690))
+- **ci:** multiple versions of pnpm specified ([c73bbba](https://github.com/coldrun/monorepo-typescript/commit/c73bbbad27ba7ba54be1fb0ce91b85617e2b06a4))
+
+### Features
+
+- **ci:** deploy to github pages ([0948391](https://github.com/coldrun/monorepo-typescript/commit/0948391a5ebb7f307b499ac44529908f1973a032))
+- **docker:** add docker-compose.yml ([fba820d](https://github.com/coldrun/monorepo-typescript/commit/fba820dc4028de57f0f873c3d7f6d0f8b6231509))
+
 ## [0.0.3](https://github.com/coldrun/monorepo-typescript/compare/v0.0.2...v0.0.3) (2024-01-03)
 
 ### Bug Fixes
