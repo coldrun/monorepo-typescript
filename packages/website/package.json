@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@monorepo-typescript/shared": "workspace:*"
+    "@coldrun/monorepo-typescript-shared": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.0.8"
