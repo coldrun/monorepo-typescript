@@ -15,11 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - id: repository-basename
-        run: |
-          echo "value=`basename ${{ github.repository }}`" >> $GITHUB_OUTPUT
-        shell: bash
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -33,6 +28,12 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Repository Basename
+        id: repository-basename
+        run: |
+          echo "value=`basename ${{ github.repository }}`" >> $GITHUB_OUTPUT
+        shell: bash
 
       - name: Build
         run: pnpm build
