@@ -1,8 +1,8 @@
 {
-  "name": "@modernweb/monorepo-typescript",
+  "name": "@coldrun/monorepo-typescript",
   "private": true,
   "version": "0.0.3",
-  "author": "ModernWeb <biuro@modernweb.pl>",
+  "author": "Coldrun <info@coldrun.com>",
   "type": "module",
   "packageManager": "pnpm@9.6.0",
   "engineStrict": true,
@@ -52,6 +52,6 @@
     ]
   },
   "docker": {
-    "registry": "ghcr.io/modernweb-pl"
+    "registry": "ghcr.io/coldrun"
   }
 }
