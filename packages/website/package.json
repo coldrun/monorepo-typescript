@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-typescript/website",
+  "name": "@coldrun/monorepo-typescript-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
