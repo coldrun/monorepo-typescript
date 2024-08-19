@@ -4,11 +4,11 @@
   "version": "0.0.3",
   "author": "Coldrun <info@coldrun.com>",
   "type": "module",
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.0",
   "engineStrict": true,
   "engines": {
     "node": ">=20",
-    "pnpm": ">=9.6"
+    "pnpm": ">=9.7"
   },
   "scripts": {
     "dev": "pnpm -r --parallel run dev",
