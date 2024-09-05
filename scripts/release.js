@@ -1,11 +1,11 @@
-import { execa } from 'execa';
 import { readFileSync, writeFileSync } from 'fs';
 import { createRequire } from 'module';
 import { resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { execa } from 'execa';
 import c from 'picocolors';
 import prompts from 'prompts';
 import { inc, valid } from 'semver';
-import { fileURLToPath } from 'url';
 
 const { version: currentVersion } = createRequire(import.meta.url)('../package.json');
 
