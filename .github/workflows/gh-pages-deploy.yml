@@ -2,7 +2,8 @@ name: GitHub Pages Publish
 
 on:
   push:
-    tags: ['*']
+    branches:
+      - master
   workflow_dispatch:
 
 concurrency:
