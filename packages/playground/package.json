@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:docker": "node ../../scripts/docker.js website",
+    "build:docker": "node ../../scripts/docker.js playground",
     "preview": "vite preview"
   },
   "dependencies": {
