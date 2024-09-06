@@ -63,16 +63,7 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  packages/shared:
-    devDependencies:
-      vite:
-        specifier: ^5.0.8
-        version: 5.0.10(@types/node@20.10.6)
-      vite-plugin-dts:
-        specifier: ^3.7.0
-        version: 3.7.0(@types/node@20.10.6)(rollup@4.9.2)(typescript@5.3.3)(vite@5.0.10(@types/node@20.10.6))
-
-  packages/website:
+  packages/playground:
     dependencies:
       '@coldrun/monorepo-typescript-shared':
         specifier: workspace:*
@@ -81,6 +72,15 @@ importers:
       vite:
         specifier: ^5.0.8
         version: 5.0.10(@types/node@20.10.6)
+
+  packages/shared:
+    devDependencies:
+      vite:
+        specifier: ^5.0.8
+        version: 5.0.10(@types/node@20.10.6)
+      vite-plugin-dts:
+        specifier: ^3.7.0
+        version: 3.7.0(@types/node@20.10.6)(rollup@4.9.2)(typescript@5.3.3)(vite@5.0.10(@types/node@20.10.6))
 
 packages:
 
