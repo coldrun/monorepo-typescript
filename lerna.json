@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
+  "packages": ["packages/*"],
+  "npmClient": "pnpm",
+  "version": "0.0.4",
+  "conventionalCommits": true,
+  "changelogPreset": "conventionalcommits"
+}
