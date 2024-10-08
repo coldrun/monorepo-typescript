@@ -3,11 +3,11 @@
   "private": true,
   "author": "Coldrun <info@coldrun.com>",
   "type": "module",
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.12.1",
   "engineStrict": true,
   "engines": {
     "node": ">=20",
-    "pnpm": ">=9.7"
+    "pnpm": ">=9.12"
   },
   "scripts": {
     "dev": "pnpm -r --parallel run dev",
