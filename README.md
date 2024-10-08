@@ -1,6 +1,8 @@
 # Monorepo TypeScript Template
 
-Opinionated [Monorepo](https://monorepo.tools/) for [TypeScript](https://www.typescriptlang.org/) projects
+Opinionated [Monorepo](https://monorepo.tools/) for [TypeScript](https://www.typescriptlang.org/) projects.
+
+[![Verify](https://github.com/coldrun/monorepo-typescript/actions/workflows/verify.yml/badge.svg?event=push)](https://github.com/coldrun/monorepo-typescript/actions/workflows/verify.yml)
 
 ## Core tools
 
