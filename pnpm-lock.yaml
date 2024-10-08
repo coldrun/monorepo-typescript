@@ -68,7 +68,7 @@ importers:
 
   packages/playground:
     dependencies:
-      '@coldrun/monorepo-typescript-shared':
+      '@monorepo-typescript/shared':
         specifier: workspace:*
         version: link:../shared
     devDependencies:

@@ -1,11 +1,8 @@
-import { createRequire } from 'module';
 import pluginJs from '@eslint/js';
 import configPrettier from 'eslint-config-prettier';
 import pluginImportX from 'eslint-plugin-import-x';
 import globals from 'globals';
 import { config, configs as configsTs, parser } from 'typescript-eslint';
-
-const pkg = createRequire(import.meta.url)('./package.json');
 
 export default config(
   {
@@ -20,7 +17,6 @@ export default config(
   {
     settings: {
       'import-x/resolver': { typescript: true, node: true },
-      'import-x/internal-regex': RegExp(`^${pkg.name}.*`),
     },
     rules: {
       'import-x/order': ['error', { alphabetize: { order: 'asc' } }],
