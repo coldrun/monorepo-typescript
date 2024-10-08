@@ -1,3 +1,28 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.1.0](https://github.com/coldrun/monorepo-typescript/compare/v0.0.4...v0.1.0) (2024-10-08)
+
+### ⚠ BREAKING CHANGES
+
+* rename website package to playground
+
+### Features
+
+* **package:** setup lerna-lite ([#11](https://github.com/coldrun/monorepo-typescript/issues/11)) ([2e87031](https://github.com/coldrun/monorepo-typescript/commit/2e8703186df59accf0bb56755676c69cc9e7cd61))
+* rename website package to playground ([b24dc83](https://github.com/coldrun/monorepo-typescript/commit/b24dc8305560bbd3509cf12f843de9a5b8966dca))
+
+### Bug Fixes
+
+* docker build after package rename ([16b1409](https://github.com/coldrun/monorepo-typescript/commit/16b14092bac8fb9c39e387627ed02b79ec728a54))
+* **package:** rename ([a232b24](https://github.com/coldrun/monorepo-typescript/commit/a232b24653505cdfd989dff0a4f0ab4bb8f80a84))
+* **package:** rename ([fc27f33](https://github.com/coldrun/monorepo-typescript/commit/fc27f335a1d614cff9eb58f3db9733abe584848d))
+* **playground:** public image import ([#12](https://github.com/coldrun/monorepo-typescript/issues/12)) ([ef1638b](https://github.com/coldrun/monorepo-typescript/commit/ef1638be98555250e28d62baa4de16c9e2e406e4))
+* rename from website to playground ([001d10c](https://github.com/coldrun/monorepo-typescript/commit/001d10c1b705e1984c631acbdd277c8d59ccbd71))
+* **shared:** set source files as entry point ([e40dceb](https://github.com/coldrun/monorepo-typescript/commit/e40dceb3c7e712c15d0b53642c1a282d202b8afe))
+
 ## [0.0.4](https://github.com/coldrun/monorepo-typescript/compare/v0.0.3...v0.0.4) (2024-08-19)
 
 ### Bug Fixes
