@@ -4,5 +4,6 @@
   "npmClient": "pnpm",
   "version": "0.1.0",
   "conventionalCommits": true,
-  "changelogPreset": "conventionalcommits"
+  "changelogPreset": "conventionalcommits",
+  "createRelease": "github"
 }
