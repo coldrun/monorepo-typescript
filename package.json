@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
-    "@lerna-lite/cli": "^3.9.2",
-    "@lerna-lite/version": "^3.9.2",
+    "@lerna-lite/cli": "^3.10.0",
+    "@lerna-lite/publish": "^3.10.0",
     "@types/node": "^20.16.5",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "eslint": "^9.10.0",

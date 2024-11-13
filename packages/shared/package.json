@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-typescript/shared",
+  "name": "@coldrun/monorepo-typescript-shared",
   "private": true,
   "version": "0.1.1",
   "type": "module",
