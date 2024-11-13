@@ -17,7 +17,8 @@
     "clean": "rimraf --glob node_modules packages/*/node_modules packages/*/dist temp .eslintcache",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint --cache .",
-    "release": "lerna version --sync-workspace-lock",
+    "lerna": "lerna",
+    "ci:publish": "lerna publish",
     "postinstall": "simple-git-hooks"
   },
   "devDependencies": {

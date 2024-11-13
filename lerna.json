@@ -5,5 +5,7 @@
   "version": "0.1.1",
   "conventionalCommits": true,
   "changelogPreset": "conventionalcommits",
+  "preid": "rc",
+  "preDistTag": "next",
   "createRelease": "github"
 }
