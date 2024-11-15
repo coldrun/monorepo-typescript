@@ -53,6 +53,9 @@
       "prettier --write --ignore-unknown"
     ]
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "docker": {
     "registry": "ghcr.io/coldrun"
   }
