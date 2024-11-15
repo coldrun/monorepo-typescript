@@ -1,0 +1,70 @@
+name: Publish NPM
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: 'Prerelease'
+        type: boolean
+        required: false
+      dry-run:
+        description: 'Dry-run'
+        type: boolean
+        required: false
+
+run-name: >-
+  Publish
+    ${{ inputs.prerelease && format('[🧪 Prerelease]') || format('') }}
+    ${{ inputs.dry-run && format('[🚫 Dry-Run]') || format('') }}
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency: publish-npm
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate
+        id: auth
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.CI_GITHUB_ACTIONS_APP_ID }}
+          private-key: ${{ secrets.CI_GITHUB_ACTIONS_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.auth.outputs.token }}
+
+      - name: Install
+        uses: ./.github/actions/install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: GitHub Packages config
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+
+      - name: Publish
+        env:
+          GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
+        run: |
+          ARGS="--yes "
+          if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+            ARGS+="--dry-run "
+          fi
+          if [[ "${{ inputs.prerelease }}" == "true" ]]; then
+            ARGS+="--conventional-prerelease "
+          fi
+          echo "$ARGS"
+          bash -c "pnpm ci:publish $ARGS"

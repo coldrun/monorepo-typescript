@@ -1,5 +1,5 @@
 import './style.css';
-import { isCallable } from '@monorepo-typescript/shared';
+import { isCallable } from '@coldrun/monorepo-typescript-shared';
 import viteLogo from '../public/vite.svg';
 import { setupCounter } from './counter.ts';
 import typescriptLogo from './typescript.svg';

@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-typescript/playground",
+  "name": "@coldrun/monorepo-typescript-playground",
   "private": true,
   "version": "0.1.1",
   "type": "module",
@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@monorepo-typescript/shared": "workspace:*"
+    "@coldrun/monorepo-typescript-core": "workspace:*",
+    "@coldrun/monorepo-typescript-shared": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.4.3"
