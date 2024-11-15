@@ -11,6 +11,11 @@ export default config(
   },
   pluginJs.configs.recommended,
   ...configsTs.recommended,
+  {
+    rules: {
+      'no-console': 'error',
+    },
+  },
   configPrettier,
   pluginImportX.flatConfigs.recommended,
   pluginImportX.flatConfigs.typescript,

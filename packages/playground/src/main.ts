@@ -24,4 +24,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
 
+// eslint-disable-next-line no-console
 console.log('import test, isCallable:', isCallable(setupCounter));
