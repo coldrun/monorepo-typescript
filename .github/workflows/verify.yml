@@ -7,8 +7,15 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
+  git-town:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Town
+        uses: git-town/action@v1
   lint:
     runs-on: ubuntu-latest
     steps:
