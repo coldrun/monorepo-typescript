@@ -11,8 +11,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm build
-RUN pnpm deploy --filter=playground --prod /prod/playground
-RUN ls -al /prod/playground
+RUN pnpm deploy --filter=monorepo-typescript-playground --prod /prod/playground
 
 FROM nginx:stable AS playground
 
