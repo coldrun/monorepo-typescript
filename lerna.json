@@ -4,7 +4,7 @@
   "npmClient": "pnpm",
   "version": "0.2.0-rc.0",
   "conventionalCommits": true,
-  "changelogPreset": "conventionalcommits",
+  "changelogPreset": "./changelog.preset.js",
   "preid": "rc",
   "preDistTag": "next",
   "createRelease": "github"
