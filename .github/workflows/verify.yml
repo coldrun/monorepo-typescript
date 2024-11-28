@@ -24,6 +24,8 @@ jobs:
 
       - name: Install
         uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint
         run: pnpm lint
@@ -35,6 +37,8 @@ jobs:
 
       - name: Install
         uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: pnpm build
@@ -46,6 +50,8 @@ jobs:
 
       - name: Install
         uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build package/playground
         uses: docker/build-push-action@v5

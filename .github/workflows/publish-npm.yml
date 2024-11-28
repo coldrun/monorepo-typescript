@@ -42,6 +42,8 @@ jobs:
 
       - name: Install
         uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: pnpm build

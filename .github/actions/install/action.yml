@@ -1,5 +1,9 @@
-name: '🔒 setup'
+name: '🛠️ Install'
 description: 'Setup Node, pnpm & install dependencies'
+
+inputs:
+  token:
+    description: Auth Token for GitHub Packages
 
 runs:
   using: 'composite'
@@ -15,6 +19,12 @@ runs:
         node-version-file: package.json
         cache: pnpm
 
+    - name: GitHub Packages Auth
+      shell: bash
+      if: ${{ inputs.token != '' }}
+      run: |
+        echo "//npm.pkg.github.com/:_authToken=${{ inputs.token }}" >> ~/.npmrc
+
     - name: Install dependencies
       shell: bash
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
