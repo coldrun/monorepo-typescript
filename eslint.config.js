@@ -11,11 +11,6 @@ export default config(
   },
   pluginJs.configs.recommended,
   ...configsTs.recommended,
-  {
-    rules: {
-      'no-console': 'error',
-    },
-  },
   configPrettier,
   pluginImportX.flatConfigs.recommended,
   pluginImportX.flatConfigs.typescript,
@@ -26,6 +21,22 @@ export default config(
     rules: {
       'import-x/order': ['error', { alphabetize: { order: 'asc' } }],
       'import-x/no-deprecated': ['warn'],
+    },
+  },
+  // overrides
+  {
+    rules: {
+      '@typescript-eslint/no-unused-expressions': ['error', { allowTernary: true }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
+      'no-console': 'error',
+      'prefer-destructuring': 'warn',
+      eqeqeq: 'error',
     },
   },
 
