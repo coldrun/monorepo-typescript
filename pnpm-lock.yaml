@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.5.0
-        version: 19.5.0(@types/node@20.16.5)(typescript@5.5.4)
+        version: 19.5.0(@types/node@20.17.9)(typescript@5.5.4)
       '@commitlint/config-conventional':
         specifier: ^19.5.0
         version: 19.5.0
@@ -22,13 +22,13 @@ importers:
         version: 9.10.0
       '@lerna-lite/cli':
         specifier: ^3.10.0
-        version: 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)
+        version: 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)
       '@lerna-lite/publish':
         specifier: ^3.10.0
-        version: 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
+        version: 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
       '@types/node':
-        specifier: ^20.16.5
-        version: 20.16.5
+        specifier: ^20.17.9
+        version: 20.17.9
       conventional-changelog-conventionalcommits:
         specifier: ^7.0.2
         version: 7.0.2
@@ -911,8 +911,8 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/node@20.16.5':
-    resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
+  '@types/node@20.17.9':
+    resolution: {integrity: sha512-0JOXkRyLanfGPE2QRCwgxhzlBAvaRdCNMcvbd7jFfpmD4eEXll7LRwy5ymJmyeZqk7Nh7eD2LeUyQ68BbndmXw==}
 
   '@types/node@22.7.4':
     resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
@@ -3068,11 +3068,11 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@commitlint/cli@19.5.0(@types/node@20.16.5)(typescript@5.5.4)':
+  '@commitlint/cli@19.5.0(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
       '@commitlint/format': 19.5.0
       '@commitlint/lint': 19.5.0
-      '@commitlint/load': 19.5.0(@types/node@20.16.5)(typescript@5.5.4)
+      '@commitlint/load': 19.5.0(@types/node@20.17.9)(typescript@5.5.4)
       '@commitlint/read': 19.5.0
       '@commitlint/types': 19.5.0
       tinyexec: 0.3.1
@@ -3119,7 +3119,7 @@ snapshots:
       '@commitlint/rules': 19.5.0
       '@commitlint/types': 19.5.0
 
-  '@commitlint/load@19.5.0(@types/node@20.16.5)(typescript@5.5.4)':
+  '@commitlint/load@19.5.0(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
       '@commitlint/config-validator': 19.5.0
       '@commitlint/execute-rule': 19.5.0
@@ -3127,7 +3127,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.5.4)
-      cosmiconfig-typescript-loader: 5.1.0(@types/node@20.16.5)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.1.0(@types/node@20.17.9)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3290,10 +3290,10 @@ snapshots:
 
   '@hutson/parse-repository-url@5.0.0': {}
 
-  '@inquirer/core@10.1.0(@types/node@20.16.5)':
+  '@inquirer/core@10.1.0(@types/node@20.17.9)':
     dependencies:
       '@inquirer/figures': 1.0.8
-      '@inquirer/type': 3.0.1(@types/node@20.16.5)
+      '@inquirer/type': 3.0.1(@types/node@20.17.9)
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
       mute-stream: 2.0.0
@@ -3304,33 +3304,33 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@inquirer/expand@4.0.2(@types/node@20.16.5)':
+  '@inquirer/expand@4.0.2(@types/node@20.17.9)':
     dependencies:
-      '@inquirer/core': 10.1.0(@types/node@20.16.5)
-      '@inquirer/type': 3.0.1(@types/node@20.16.5)
-      '@types/node': 20.16.5
+      '@inquirer/core': 10.1.0(@types/node@20.17.9)
+      '@inquirer/type': 3.0.1(@types/node@20.17.9)
+      '@types/node': 20.17.9
       yoctocolors-cjs: 2.1.2
 
   '@inquirer/figures@1.0.8': {}
 
-  '@inquirer/input@4.0.2(@types/node@20.16.5)':
+  '@inquirer/input@4.0.2(@types/node@20.17.9)':
     dependencies:
-      '@inquirer/core': 10.1.0(@types/node@20.16.5)
-      '@inquirer/type': 3.0.1(@types/node@20.16.5)
-      '@types/node': 20.16.5
+      '@inquirer/core': 10.1.0(@types/node@20.17.9)
+      '@inquirer/type': 3.0.1(@types/node@20.17.9)
+      '@types/node': 20.17.9
 
-  '@inquirer/select@4.0.2(@types/node@20.16.5)':
+  '@inquirer/select@4.0.2(@types/node@20.17.9)':
     dependencies:
-      '@inquirer/core': 10.1.0(@types/node@20.16.5)
+      '@inquirer/core': 10.1.0(@types/node@20.17.9)
       '@inquirer/figures': 1.0.8
-      '@inquirer/type': 3.0.1(@types/node@20.16.5)
-      '@types/node': 20.16.5
+      '@inquirer/type': 3.0.1(@types/node@20.17.9)
+      '@types/node': 20.17.9
       ansi-escapes: 4.3.2
       yoctocolors-cjs: 2.1.2
 
-  '@inquirer/type@3.0.1(@types/node@20.16.5)':
+  '@inquirer/type@3.0.1(@types/node@20.17.9)':
     dependencies:
-      '@types/node': 20.16.5
+      '@types/node': 20.17.9
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -3345,10 +3345,10 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
-  '@lerna-lite/cli@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)':
+  '@lerna-lite/cli@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
-      '@lerna-lite/core': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
-      '@lerna-lite/init': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/core': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
+      '@lerna-lite/init': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
       '@lerna-lite/npmlog': 3.10.0
       dedent: 1.5.3
       dotenv: 16.4.5
@@ -3356,8 +3356,8 @@ snapshots:
       load-json-file: 7.0.1
       yargs: 17.7.2
     optionalDependencies:
-      '@lerna-lite/publish': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
-      '@lerna-lite/version': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/publish': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
+      '@lerna-lite/version': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -3365,11 +3365,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/core@3.10.0(@types/node@20.16.5)(typescript@5.5.4)':
+  '@lerna-lite/core@3.10.0(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
-      '@inquirer/expand': 4.0.2(@types/node@20.16.5)
-      '@inquirer/input': 4.0.2(@types/node@20.16.5)
-      '@inquirer/select': 4.0.2(@types/node@20.16.5)
+      '@inquirer/expand': 4.0.2(@types/node@20.17.9)
+      '@inquirer/input': 4.0.2(@types/node@20.17.9)
+      '@inquirer/select': 4.0.2(@types/node@20.17.9)
       '@lerna-lite/npmlog': 3.10.0
       '@npmcli/run-script': 8.1.0
       clone-deep: 4.0.1
@@ -3403,9 +3403,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/init@3.10.0(@types/node@20.16.5)(typescript@5.5.4)':
+  '@lerna-lite/init@3.10.0(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
-      '@lerna-lite/core': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/core': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
       fs-extra: 11.2.0
       p-map: 7.0.2
       write-json-file: 6.0.0
@@ -3428,12 +3428,12 @@ snapshots:
       strip-ansi: 7.1.0
       wide-align: 1.1.5
 
-  '@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4)':
+  '@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
-      '@lerna-lite/cli': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)
-      '@lerna-lite/core': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/cli': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)
+      '@lerna-lite/core': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
       '@lerna-lite/npmlog': 3.10.0
-      '@lerna-lite/version': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/version': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.1
       byte-size: 9.0.0
@@ -3466,10 +3466,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)':
+  '@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)':
     dependencies:
-      '@lerna-lite/cli': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4))(@types/node@20.16.5)(typescript@5.5.4)
-      '@lerna-lite/core': 3.10.0(@types/node@20.16.5)(typescript@5.5.4)
+      '@lerna-lite/cli': 3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@lerna-lite/version@3.10.0(@lerna-lite/publish@3.10.0(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4))(@types/node@20.17.9)(typescript@5.5.4)
+      '@lerna-lite/core': 3.10.0(@types/node@20.17.9)(typescript@5.5.4)
       '@lerna-lite/npmlog': 3.10.0
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 21.0.2
@@ -3980,13 +3980,13 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.16.5
+      '@types/node': 20.17.9
 
   '@types/estree@1.0.5': {}
 
   '@types/estree@1.0.6': {}
 
-  '@types/node@20.16.5':
+  '@types/node@20.17.9':
     dependencies:
       undici-types: 6.19.8
 
@@ -4394,9 +4394,9 @@ snapshots:
       git-semver-tags: 7.0.1
       meow: 12.1.1
 
-  cosmiconfig-typescript-loader@5.1.0(@types/node@20.16.5)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
+  cosmiconfig-typescript-loader@5.1.0(@types/node@20.17.9)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
     dependencies:
-      '@types/node': 20.16.5
+      '@types/node': 20.17.9
       cosmiconfig: 9.0.0(typescript@5.5.4)
       jiti: 1.21.6
       typescript: 5.5.4
