@@ -1,8 +1,6 @@
 name: Verify
 
 on:
-  push:
-    branches: [master, main]
   pull_request:
 
 permissions:
@@ -11,7 +9,6 @@ permissions:
 
 jobs:
   git-town:
-    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Git Town
