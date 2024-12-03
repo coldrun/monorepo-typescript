@@ -1,12 +1,11 @@
 name: Publish NPM
 
 on:
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
-      prerelease:
-        description: 'Prerelease'
-        type: boolean
-        required: false
       dry-run:
         description: 'Dry-run'
         type: boolean
@@ -14,11 +13,10 @@ on:
 
 run-name: >-
   Publish
-    ${{ inputs.prerelease && format('[🧪 Prerelease]') || format('') }}
+    ${{ github.ref_name && format('{0}', github.ref_name) || format('') }}
     ${{ inputs.dry-run && format('[🚫 Dry-Run]') || format('') }}
 
 permissions:
-  contents: write
   packages: write
 
 concurrency: publish-npm
@@ -48,15 +46,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Git config
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: GitHub Packages config
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-
       - name: Publish
         env:
           GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
@@ -64,9 +53,6 @@ jobs:
           ARGS="--yes "
           if [[ "${{ inputs.dry-run }}" == "true" ]]; then
             ARGS+="--dry-run "
-          fi
-          if [[ "${{ inputs.prerelease }}" == "true" ]]; then
-            ARGS+="--conventional-prerelease "
           fi
           echo "$ARGS"
           bash -c "pnpm ci:publish $ARGS"

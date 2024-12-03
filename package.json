@@ -18,7 +18,8 @@
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint --cache .",
     "lerna": "lerna",
-    "ci:publish": "lerna publish",
+    "ci:release": "lerna version",
+    "ci:publish": "lerna publish from-package",
     "prepare": "husky"
   },
   "devDependencies": {

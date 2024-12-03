@@ -2,7 +2,8 @@ name: Publish Docker
 
 on:
   push:
-    tags: ['*']
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 env:

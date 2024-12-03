@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Bump'
+        required: true
+        type: choice
+        options:
+          - (auto)
+          - patch
+          - minor
+          - major
+      prerelease:
+        description: 'Prerelease'
+        type: boolean
+        required: false
+      dry-run:
+        description: 'Dry-run'
+        type: boolean
+        required: false
+
+run-name: >-
+  Release
+    ${{ inputs.bump && format('[🚀 {0}]', inputs.bump) || format('') }}
+    ${{ inputs.prerelease && format('[🧪 Prerelease]') || format('') }}
+    ${{ inputs.dry-run && format('[🚫 Dry-Run]') || format('') }}
+
+permissions:
+  contents: write
+
+concurrency: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate
+        id: auth
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.CI_GITHUB_ACTIONS_APP_ID }}
+          private-key: ${{ secrets.CI_GITHUB_ACTIONS_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.auth.outputs.token }}
+
+      - name: Install
+        uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build
+        run: pnpm build
+
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Version
+        env:
+          GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
+        run: |
+          ARGS=""
+          if [[ "${{ inputs.bump }}" == "(auto)" ]]; then
+            ARGS+="${{ inputs.prerelease && format('--conventional-prerelease') || format('') }} "
+          else
+            ARGS+="${{ inputs.prerelease && format('pre{0}', inputs.bump) || inputs.bump }} "
+          fi
+          if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+            ARGS+="--dry-run "
+          fi
+          ARGS+="--yes "
+          echo "$ARGS"
+          bash -c "pnpm ci:release $ARGS"
