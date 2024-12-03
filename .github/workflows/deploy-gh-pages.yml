@@ -19,6 +19,8 @@ jobs:
 
       - name: Install
         uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Repository Basename
         id: repository-basename
