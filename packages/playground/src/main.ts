@@ -1,7 +1,7 @@
 import './style.css';
 import { isCallable } from '@coldrun/monorepo-typescript-shared';
 import viteLogo from '../public/vite.svg';
-import { setupCounter } from './counter.ts';
+import { setupCounter } from './counter';
 import typescriptLogo from './typescript.svg';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
