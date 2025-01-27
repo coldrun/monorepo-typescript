@@ -4,11 +4,11 @@
   "author": "Coldrun <info@coldrun.com>",
   "homepage": "https://github.com/coldrun/monorepo-typescript",
   "type": "module",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.4",
   "engineStrict": true,
   "engines": {
     "node": "^20",
-    "pnpm": "~9.14.4"
+    "pnpm": "~9.15.4"
   },
   "scripts": {
     "dev": "pnpm -r --parallel run dev",

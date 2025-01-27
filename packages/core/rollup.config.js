@@ -7,13 +7,8 @@ import { dts } from 'rollup-plugin-dts';
 export default defineConfig([
   {
     input: 'src/index.ts',
-    output: [
-      {
-        file: 'dist/index.js',
-        format: 'es',
-      },
-    ],
-    plugins: [resolve(), commonjs(), typescript()],
+    output: [{ file: 'dist/index.js', format: 'es' }],
+    plugins: [resolve({ browser: true }), commonjs(), typescript()],
   },
   {
     input: 'src/index.ts',

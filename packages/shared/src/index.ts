@@ -1,2 +1,2 @@
-export * from './check.ts';
-export * from './object.ts';
+export * from './check';
+export * from './object';
