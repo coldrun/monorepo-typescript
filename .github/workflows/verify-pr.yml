@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 

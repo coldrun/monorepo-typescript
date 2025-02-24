@@ -1,5 +1,5 @@
-name: '🛠️ Install'
-description: 'Setup Node, pnpm & install dependencies'
+name: '🛠️ Node.js Install'
+description: 'Setup Node.js, pnpm & install dependencies'
 
 inputs:
   token:

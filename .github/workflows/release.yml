@@ -50,7 +50,7 @@ jobs:
           token: ${{ steps.auth.outputs.token }}
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
