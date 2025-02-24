@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0-rc.1](https://github.com/coldrun/monorepo-typescript/compare/v0.2.0-rc.0...v0.2.0-rc.1) (2025-02-24)
+
+### Features
+
+* **ci:** add git-town action ([39dc7f5](https://github.com/coldrun/monorepo-typescript/commit/39dc7f5bb8825a852d115a872b07b68c1520ebe6))
+* **ci:** add github token for NPM private packages ([b132205](https://github.com/coldrun/monorepo-typescript/commit/b1322052c4c3af0977a2ea0dded5f29c5491bac0))
+* **ci:** release workflow ([892efae](https://github.com/coldrun/monorepo-typescript/commit/892efaea2844730c945b412509ada4827363eac1))
+* commitlint ([#17](https://github.com/coldrun/monorepo-typescript/issues/17)) ([6ffb216](https://github.com/coldrun/monorepo-typescript/commit/6ffb2169f6c2277b34c4babdbbf9098a2e7d5040))
+* **package:** switch from `simple-git-hooks` to `husky` ([#18](https://github.com/coldrun/monorepo-typescript/issues/18)) ([f2ee0d7](https://github.com/coldrun/monorepo-typescript/commit/f2ee0d772f4e89f19bdaf2f41a1d152d70c9f530))
+
+### Bug Fixes
+
+* **ci:** docker build ([a538087](https://github.com/coldrun/monorepo-typescript/commit/a538087cc9ba95068cdbd62f93efa90ff85ca6a4))
+
+### Documentation
+
+* improved readme ([a0c084b](https://github.com/coldrun/monorepo-typescript/commit/a0c084bea98b33ed69e6fd30dd5750a48d88ba77))
+
 ## [0.2.0-rc.0](https://github.com/coldrun/monorepo-typescript/compare/v0.1.1...v0.2.0-rc.0) (2024-11-15)
 
 ### Features
