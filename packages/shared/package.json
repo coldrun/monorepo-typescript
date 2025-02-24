@@ -1,7 +1,7 @@
 {
   "name": "@coldrun/monorepo-typescript-shared",
   "private": true,
-  "version": "0.2.0-rc.1",
+  "version": "0.2.0",
   "type": "module",
   "main": "src/index.ts",
   "module": "src/index.ts",

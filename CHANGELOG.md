@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/coldrun/monorepo-typescript/compare/v0.2.0-rc.1...v0.2.0) (2025-02-24)
+
+### Bug Fixes
+
+* **ci:** handle conventional-graduate in release workflow ([5ecdaeb](https://github.com/coldrun/monorepo-typescript/commit/5ecdaeb33464a7539c0d5b3e6c0c39b4582e9039))
+* **ci:** invalid condition in release workflow ([5ad97ce](https://github.com/coldrun/monorepo-typescript/commit/5ad97ce8bf7690f45f7329627e2a19a40e9e063a))
+
 ## [0.2.0-rc.1](https://github.com/coldrun/monorepo-typescript/compare/v0.2.0-rc.0...v0.2.0-rc.1) (2025-02-24)
 
 ### Features

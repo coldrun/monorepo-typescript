@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/coldrun/monorepo-typescript/compare/v0.2.0-rc.1...v0.2.0) (2025-02-24)
+
+**Note:** Version bump only for package @coldrun/monorepo-typescript-playground
+
 ## [0.2.0-rc.1](https://github.com/coldrun/monorepo-typescript/compare/v0.2.0-rc.0...v0.2.0-rc.1) (2025-02-24)
 
 **Note:** Version bump only for package @coldrun/monorepo-typescript-playground
