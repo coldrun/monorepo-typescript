@@ -67,10 +67,11 @@ jobs:
           GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
         run: |
           ARGS=""
-          if [[ "${{ inputs.bump }}" == "(auto)" ]]; then
-            ARGS+="${{ inputs.prerelease && format('--conventional-prerelease') || format('') }} "
+          if [[ ${{ inputs.prerelease }}; then
+            ARGS+="--conventional-prerelease "
+            ARGS+="${{ inputs.bump == '(auto)' && ' ' || format('pre{0}', inputs.bump) }} "
           else
-            ARGS+="${{ inputs.prerelease && format('pre{0}', inputs.bump) || inputs.bump }} "
+            ARGS+="${{ inputs.bump == '(auto)' && '--conventional-graduate' || inputs.bump }} "
           fi
           if [[ "${{ inputs.dry-run }}" == "true" ]]; then
             ARGS+="--dry-run "
