@@ -26,6 +26,19 @@ jobs:
 
       - name: Lint
         run: pnpm lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install
+        uses: ./.github/actions/install
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Test
+        run: pnpm test
   build:
     runs-on: ubuntu-latest
     steps:
