@@ -67,7 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ steps.auth.outputs.token }}
         run: |
           ARGS=""
-          if [[ ${{ inputs.prerelease }}; then
+          if [[ "${{ inputs.prerelease }}" == "true" ]]; then
             ARGS+="--conventional-prerelease "
             ARGS+="${{ inputs.bump == '(auto)' && ' ' || format('pre{0}', inputs.bump) }} "
           else
