@@ -1,10 +1,15 @@
-name: Verify PR
+name: Verify
 
 on:
   pull_request:
+  push:
+    branches:
+      - master
+      - main
 
 permissions:
   contents: read
+  packages: read
   pull-requests: write
 
 jobs:
@@ -13,6 +18,7 @@ jobs:
     steps:
       - name: Git Town
         uses: git-town/action@v1
+        if: github.event_name == 'pull_request'
   lint:
     runs-on: ubuntu-latest
     steps:
