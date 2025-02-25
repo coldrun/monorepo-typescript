@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       bump:
-        description: 'Bump'
+        description: 'Bump Type'
         required: true
         type: choice
         options:
@@ -17,7 +17,7 @@ on:
         type: boolean
         required: false
       dry-run:
-        description: 'Dry-run'
+        description: 'Dry Run'
         type: boolean
         required: false
 
@@ -25,10 +25,11 @@ run-name: >-
   Release
     ${{ inputs.bump && format('[🚀 {0}]', inputs.bump) || format('') }}
     ${{ inputs.prerelease && format('[🧪 Prerelease]') || format('') }}
-    ${{ inputs.dry-run && format('[🚫 Dry-Run]') || format('') }}
+    ${{ inputs.dry-run && format('[🚫 Dry Run]') || format('') }}
 
 permissions:
   contents: write
+  packages: read
 
 concurrency: release
 
@@ -53,9 +54,6 @@ jobs:
         uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build
-        run: pnpm build
 
       - name: Git config
         run: |
