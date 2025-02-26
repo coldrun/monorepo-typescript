@@ -5,8 +5,8 @@ on:
     inputs:
       bump:
         description: 'Bump Type'
-        required: true
         type: choice
+        required: true
         options:
           - (auto)
           - patch
@@ -14,6 +14,10 @@ on:
           - major
       prerelease:
         description: 'Prerelease'
+        type: boolean
+        required: false
+      force:
+        description: 'Force Bump'
         type: boolean
         required: false
       dry-run:
@@ -25,11 +29,12 @@ run-name: >-
   Release
     ${{ inputs.bump && format('[🚀 {0}]', inputs.bump) || format('') }}
     ${{ inputs.prerelease && format('[🧪 Prerelease]') || format('') }}
+    ${{ inputs.force && format('[⚡ Force]') || format('') }}
     ${{ inputs.dry-run && format('[🚫 Dry Run]') || format('') }}
 
 permissions:
-  contents: write
   packages: read
+  contents: write
 
 concurrency: release
 
@@ -68,12 +73,18 @@ jobs:
           if [[ "${{ inputs.prerelease }}" == "true" ]]; then
             ARGS+="--conventional-prerelease "
             ARGS+="${{ inputs.bump == '(auto)' && ' ' || format('pre{0}', inputs.bump) }} "
+            if [[ "${{ inputs.force }}" == "true" ]]; then
+              ARGS+="--force-publish "
+            fi
           else
             ARGS+="${{ inputs.bump == '(auto)' && '--conventional-graduate' || inputs.bump }} "
+            if [[ "${{ inputs.force }}" == "true" ]]; then
+              ARGS+="--force-conventional-graduate "
+            fi
           fi
           if [[ "${{ inputs.dry-run }}" == "true" ]]; then
             ARGS+="--dry-run "
           fi
           ARGS+="--yes "
-          echo "$ARGS"
+          echo "Running: pnpm ci:release $ARGS"
           bash -c "pnpm ci:release $ARGS"
