@@ -1,5 +1,5 @@
 {
-  "name": "nestjs",
+  "name": "@coldrun/monorepo-typescript-nestjs",
   "private": true,
   "version": "1.0.0",
   "description": "Nest TypeScript starter repository",
@@ -17,6 +17,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@coldrun/monorepo-typescript-core": "workspace:*",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
