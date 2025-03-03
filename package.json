@@ -22,7 +22,9 @@
     "lerna": "lerna",
     "ci:release": "lerna version",
     "ci:publish": "lerna publish from-package",
-    "prepare": "husky"
+    "prepare": "husky",
+    "core": "pnpm -F monorepo-typescript-core",
+    "nestjs": "pnpm -F monorepo-typescript-nestjs"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
