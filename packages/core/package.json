@@ -15,14 +15,7 @@
   },
   "main": "./dist/index.cjs",
   "exports": "./dist/index.js",
-  "publishConfig": {
-    "exports": {
-      ".": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      }
-    }
-  },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
   ]
