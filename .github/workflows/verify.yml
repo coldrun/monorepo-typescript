@@ -16,61 +16,36 @@ jobs:
   git-town:
     runs-on: ubuntu-latest
     steps:
-      - name: Git Town
-        uses: git-town/action@v1
+      - uses: git-town/action@v1
         if: github.event_name == 'pull_request'
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install
-        uses: ./.github/actions/node-install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Lint
-        run: pnpm lint
+      - run: |
+          pnpm build
+          pnpm lint
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install
-        uses: ./.github/actions/node-install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Test
-        run: pnpm test
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install
-        uses: ./.github/actions/node-install
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build
-        run: pnpm build
+      - run: |
+          pnpm build
+          pnpm test
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install
-        uses: ./.github/actions/node-install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build package/playground
-        uses: docker/build-push-action@v6
+      - uses: docker/build-push-action@v6
         with:
           context: .
           target: playground
