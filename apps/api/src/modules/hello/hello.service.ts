@@ -2,7 +2,7 @@ import { coerceArray } from '@coldrun/monorepo-typescript-core';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class AppService {
+export class HelloService {
   getHello() {
     return { message: coerceArray('Hello World!') };
   }
