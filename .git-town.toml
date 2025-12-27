@@ -1,0 +1,21 @@
+# See https://www.git-town.com/configuration.html for details
+
+[branches]
+main = "master"
+
+[create]
+new-branch-type = "feature"
+share-new-branches = "no"
+stash = true
+
+[ship]
+delete-tracking-branch = false
+strategy = "api"
+
+[sync]
+feature-strategy = "rebase"
+perennial-strategy = "rebase"
+prototype-strategy = "rebase"
+push-hook = true
+tags = true
+upstream = true
