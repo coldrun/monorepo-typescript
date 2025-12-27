@@ -15,7 +15,7 @@
     "build": "pnpm -r run build",
     "build:docker": "pnpm -r --stream run build:docker",
     "clean": "rimraf --glob packages/*/dist temp .eslintcache",
-    "clean:all": "pnpm clean && rimraf --glob node_modules packages/*/node_modules",
+    "clean:all": "pnpm clean && rimraf --glob node_modules packages/*/node_modules apps/*/node_modules",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint --cache . && prettier -c .",
     "test": "pnpm -r --parallel run test",
