@@ -23,6 +23,7 @@
     "ci:release": "lerna version",
     "ci:publish": "lerna publish from-package",
     "prepare": "husky",
+    "shared": "pnpm -F monorepo-typescript-shared",
     "core": "pnpm -F monorepo-typescript-core",
     "api": "pnpm -F monorepo-typescript-api"
   },
