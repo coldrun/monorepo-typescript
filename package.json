@@ -14,7 +14,7 @@
     "dev": "pnpm -r --parallel run dev",
     "build": "pnpm -r run build",
     "build:docker": "pnpm -r --stream run build:docker",
-    "clean": "rimraf --glob packages/*/dist temp .eslintcache",
+    "clean": "rimraf --glob packages/*/dist apps/*/dist temp .eslintcache",
     "clean:all": "pnpm clean && rimraf --glob node_modules packages/*/node_modules apps/*/node_modules",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint --cache . && prettier -c .",
@@ -24,7 +24,7 @@
     "ci:publish": "lerna publish from-package",
     "prepare": "husky",
     "core": "pnpm -F monorepo-typescript-core",
-    "nestjs": "pnpm -F monorepo-typescript-nestjs"
+    "api": "pnpm -F monorepo-typescript-api"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
