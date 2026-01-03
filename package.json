@@ -15,14 +15,16 @@
     "build": "pnpm -r run build",
     "build:docker": "pnpm -r --stream run build:docker",
     "clean": "rimraf --glob packages/*/dist temp .eslintcache",
-    "clean:all": "pnpm clean && rimraf --glob node_modules packages/*/node_modules",
+    "clean:all": "pnpm clean && rimraf --glob node_modules packages/*/node_modules apps/*/node_modules",
     "format": "prettier . --write --ignore-unknown",
     "lint": "eslint --cache . && prettier -c .",
     "test": "pnpm -r --parallel run test",
     "lerna": "lerna",
     "ci:release": "lerna version",
     "ci:publish": "lerna publish from-package",
-    "prepare": "husky"
+    "prepare": "husky",
+    "core": "pnpm -F monorepo-typescript-core",
+    "nestjs": "pnpm -F monorepo-typescript-nestjs"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
