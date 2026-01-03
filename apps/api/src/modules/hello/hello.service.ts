@@ -1,4 +1,4 @@
-import { coerceArray } from '@coldrun/monorepo-typescript-core';
+import { coerceArray } from '@coldrun/monorepo-typescript-shared';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

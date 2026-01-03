@@ -1,2 +1,1 @@
-export * from './check';
-export * from './object';
+export * from './utils';
