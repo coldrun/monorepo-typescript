@@ -14,26 +14,26 @@ const packages = fs.readdirSync(packagesPath);
 
 const {
   docker: { registry },
-  homepage,
+  repository,
 } = createRequire(`${rootPath}/`)('./package.json');
-const { version } = createRequire(`${rootPath}/`)('./lerna.json');
 
 const exec = (bin, args, opts = {}) =>
   execa(bin, args, { stdio: 'inherit', cwd: rootPath, ...opts });
 
-const imageInfo = (target, tag) => {
+function imageInfo(target, { tag }) {
   if (!packages.includes(target)) {
     throw new Error(`Invalid target: '${target}'`);
   }
   const targetPath = `${packagesPath}/${target}`;
   const targetPackage = createRequire(import.meta.url)(`${targetPath}/package.json`);
-  const name = targetPackage.name.replace('@', '');
-  const packageName = `${registry}/${name}`;
-  const currentImage = `${packageName}:v${version}`;
-  const tagImage = `${packageName}:${tag}`;
+  const name = targetPackage.name.split('/').pop();
+  const tagName = tag || 'latest';
 
-  return { packageName, currentImage, tagImage };
-};
+  const imageName = `${registry}/${name}`;
+  const image = `${imageName}:${tagName}`;
+
+  return { imageName, image, targetPath };
+}
 
 yargs(hideBin(process.argv))
   .command(
@@ -45,18 +45,18 @@ yargs(hideBin(process.argv))
     },
     async (args) => {
       const { target, tag, verbose } = args;
-      const { currentImage, tagImage } = imageInfo(target, tag);
+      const { image, targetPath } = imageInfo(target, { tag });
       const dockerArgs = [
         'build',
         '.',
-        '--target',
-        target,
+        '-f',
+        `${targetPath}/Dockerfile`,
         '--label',
-        `org.opencontainers.image.source=${homepage}`,
+        `org.opencontainers.image.source=${repository}`,
         '-t',
-        currentImage,
-        '-t',
-        tagImage,
+        image,
+        '--secret',
+        `id=npmrc,src=${process.env.HOME}/.npmrc`,
       ];
       if (verbose) {
         dockerArgs.push('--progress', 'plain');
@@ -69,19 +69,24 @@ yargs(hideBin(process.argv))
     'push <target>',
     'push docker image',
     {
-      tag: { alias: 't', default: 'latest' },
       verbose: { alias: 'v', type: 'boolean' },
     },
     async (args) => {
-      const { target, tag, verbose } = args;
-      const { packageName } = imageInfo(target, tag);
-      const dockerArgs = ['push', packageName, '-a'];
-      if (verbose) {
-        dockerArgs.push('--progress', 'plain');
-      }
-      console.log('Running docker:', dockerArgs.join(' '));
-      await exec('docker', dockerArgs);
+      const { target, verbose } = args;
+      const { image } = imageInfo(target, {});
+
+      const push = async (args) => {
+        if (verbose) {
+          args.push('--progress', 'plain');
+        }
+        console.log('Running docker:', args.join(' '));
+        await exec('docker', args);
+      };
+
+      const dockerArgs = ['push', image];
+      await push(dockerArgs);
     },
   )
   .help()
+  .demandCommand()
   .parse();

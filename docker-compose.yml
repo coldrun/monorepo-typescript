@@ -1,8 +1,0 @@
-services:
-  playground:
-    build:
-      context: .
-      target: playground
-    ports:
-      - '8080:80'
-    tty: true

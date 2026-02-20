@@ -45,7 +45,5 @@ jobs:
       - uses: ./.github/actions/node-install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: playground
+      - run: |
+          pnpm docker:build
