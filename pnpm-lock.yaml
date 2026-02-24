@@ -79,7 +79,7 @@ importers:
     dependencies:
       '@coldrun/monorepo-typescript-core':
         specifier: workspace:*
-        version: link:../../packages/core
+        version: link:../../libs/core
       '@nestjs/common':
         specifier: ^11.1.10
         version: 11.1.10(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -152,16 +152,16 @@ importers:
     dependencies:
       '@coldrun/monorepo-typescript-core':
         specifier: workspace:*
-        version: link:../../packages/core
+        version: link:../../libs/core
       '@coldrun/monorepo-typescript-shared':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../libs/shared
     devDependencies:
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@24.10.13)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0)
 
-  packages/core:
+  libs/core:
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^29.0.0
@@ -179,7 +179,7 @@ importers:
         specifier: ^6.3.0
         version: 6.3.0(rollup@4.54.0)(typescript@5.9.3)
 
-  packages/shared:
+  libs/shared:
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^29.0.0
@@ -7048,7 +7048,7 @@ snapshots:
       estree-walker: 2.0.2
       fdir: 6.5.0(picomatch@4.0.3)
       is-reference: 1.2.1
-      magic-string: 0.30.17
+      magic-string: 0.30.21
       picomatch: 4.0.3
     optionalDependencies:
       rollup: 4.54.0
