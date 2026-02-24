@@ -148,6 +148,19 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
 
+  apps/vanilla-vite:
+    dependencies:
+      '@coldrun/monorepo-typescript-core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@coldrun/monorepo-typescript-shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+    devDependencies:
+      vite:
+        specifier: ^5.4.3
+        version: 5.4.4(@types/node@24.10.13)(terser@5.39.0)
+
   packages/core:
     devDependencies:
       '@rollup/plugin-commonjs':
@@ -165,19 +178,6 @@ importers:
       rollup-plugin-dts:
         specifier: ^6.3.0
         version: 6.3.0(rollup@4.54.0)(typescript@5.9.3)
-
-  packages/playground:
-    dependencies:
-      '@coldrun/monorepo-typescript-core':
-        specifier: workspace:*
-        version: link:../core
-      '@coldrun/monorepo-typescript-shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      vite:
-        specifier: ^5.4.3
-        version: 5.4.4(@types/node@24.10.13)(terser@5.39.0)
 
   packages/shared:
     devDependencies:
@@ -10299,7 +10299,7 @@ snapshots:
   postcss@8.4.45:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.1.0
+      picocolors: 1.1.1
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
