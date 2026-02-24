@@ -42,13 +42,7 @@ export default config(
 
   // Node scripts
   {
-    files: [
-      'eslint.config.js',
-      'rollup*.config.js',
-      'scripts/**',
-      './*.{js,ts}',
-      'packages/*/*.js',
-    ],
+    files: ['eslint.config.js', 'rollup*.config.js', 'scripts/**', './*.{js,ts}', 'libs/*/*.js'],
     languageOptions: { globals: globals.node },
     rules: {
       'no-restricted-globals': 'off',
