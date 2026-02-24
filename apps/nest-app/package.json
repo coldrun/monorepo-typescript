@@ -1,8 +1,8 @@
 {
-  "name": "@coldrun/monorepo-typescript-api",
+  "name": "@coldrun/monorepo-typescript-nest-app",
   "private": true,
   "version": "1.0.0",
-  "description": "API starter repository powered by NestJS",
+  "description": "Starter app service powered by NestJS",
   "license": "MIT",
   "scripts": {
     "build": "nest build",
