@@ -8,9 +8,9 @@ import { hideBin } from 'yargs/helpers';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootPath = path.resolve(__dirname, '../');
-const packagesDir = 'packages';
-const packagesPath = path.join(rootPath, packagesDir);
-const packages = fs.readdirSync(packagesPath);
+const appsDir = 'apps';
+const appsPath = path.join(rootPath, appsDir);
+const apps = fs.readdirSync(appsPath);
 
 const {
   docker: { registry },
@@ -21,12 +21,12 @@ const exec = (bin, args, opts = {}) =>
   execa(bin, args, { stdio: 'inherit', cwd: rootPath, ...opts });
 
 function imageInfo(target, { tag }) {
-  if (!packages.includes(target)) {
+  if (!apps.includes(target)) {
     throw new Error(`Invalid target: '${target}'`);
   }
-  const targetPath = `${packagesPath}/${target}`;
-  const targetPackage = createRequire(import.meta.url)(`${targetPath}/package.json`);
-  const name = targetPackage.name.split('/').pop();
+  const targetPath = `${appsPath}/${target}`;
+  const targetApp = createRequire(import.meta.url)(`${targetPath}/package.json`);
+  const name = targetApp.name.split('/').pop();
   const tagName = tag || 'latest';
 
   const imageName = `${registry}/${name}`;

@@ -1,13 +1,13 @@
 {
-  "name": "@coldrun/monorepo-typescript-playground",
+  "name": "@coldrun/monorepo-typescript-vanilla-vite",
   "private": true,
   "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "docker:build": "node ../../scripts/docker.js build playground",
-    "docker:push": "node ../../scripts/docker.js push playground",
+    "docker:build": "node ../../scripts/docker.js build vanilla-vite",
+    "docker:push": "node ../../scripts/docker.js push vanilla-vite",
     "preview": "vite preview"
   },
   "dependencies": {
