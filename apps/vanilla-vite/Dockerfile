@@ -13,8 +13,8 @@ FROM base AS build
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc tsconfig.json ./
-COPY packages/core packages/core
-COPY packages/shared packages/shared
+COPY libs/core libs/core
+COPY libs/shared libs/shared
 COPY apps/vanilla-vite apps/vanilla-vite
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store  \
