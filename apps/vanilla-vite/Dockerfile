@@ -15,7 +15,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc tsconfig.json ./
 COPY packages/core packages/core
 COPY packages/shared packages/shared
-COPY packages/playground packages/playground
+COPY apps/vanilla-vite apps/vanilla-vite
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store  \
     --mount=type=secret,id=npmrc,target=/root/.npmrc \
@@ -24,16 +24,12 @@ RUN pnpm build
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store  \
     --mount=type=secret,id=npmrc,target=/root/.npmrc \
-    pnpm deploy --legacy --filter="@coldrun/monorepo-typescript-playground" --prod /app/deploy
+    pnpm deploy --legacy --filter="@coldrun/monorepo-typescript-vanilla-vite" --prod /app/deploy
 
-FROM nginx:stable AS playground
+FROM nginx:stable AS app
 
-COPY packages/playground/.docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY packages/playground/.docker/expires.conf /etc/nginx/conf.d/expires.conf
+COPY apps/vanilla-vite/.docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY apps/vanilla-vite/.docker/expires.conf /etc/nginx/conf.d/expires.conf
 
 COPY --from=build /app/deploy/dist /app
 COPY --from=build /app/deploy/node_modules /app/node_modules
-
-RUN ls -al /app
-RUN ls -al /app/node_modules
-#ENTRYPOINT ["node", "main.js"]
