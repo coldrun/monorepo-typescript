@@ -25,7 +25,7 @@
     "prepare": "husky",
     "shared": "pnpm -F monorepo-typescript-shared",
     "core": "pnpm -F monorepo-typescript-core",
-    "api": "pnpm -F monorepo-typescript-api"
+    "app-nestjs": "pnpm -F monorepo-typescript-app-nestjs"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
